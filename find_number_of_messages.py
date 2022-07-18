@@ -16,7 +16,6 @@ def find_number_of_messages(data: dict)->int:
     messages = data["messages"]
     for i in messages:
         if i.get("text") and i.get("text") not in message:
-            message.append(i["text"])
             c += 1
 
 
