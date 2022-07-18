@@ -1,3 +1,4 @@
+from cgitb import text
 from read_data import read_data
 
 def find_number_of_messages(data: dict)->int:
@@ -13,11 +14,12 @@ def find_number_of_messages(data: dict)->int:
     message = []
     c = 0
     messages = data["messages"]
-    for m in messages:
-        if m.get("text") and m.get("text") not in message:
-            message.append(m["text"])
+    for i in messages:
+        if i.get("text") and i.get("text") not in message:
+            message.append(i["text"])
             c += 1
 
-    return c 
 
-print(find_number_of_messages(read_data('data/resuls.json')))
+    return c
+
+print(find_number_of_messages(read_data('data/result.json')))
